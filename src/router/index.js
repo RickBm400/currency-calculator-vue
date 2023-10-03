@@ -3,13 +3,22 @@ import { createRouter, createWebHistory   } from 'vue-router'
 const routes = [
     {
         path: '/',
-        name: 'main',
-        component: () => import('pages/HomePage.vue')
+        component: () => import('pages/Layout.vue'),
+        children: [
+            {
+                path: '',
+                component: () => import('pages/Landing.vue')
+            },
+            {
+                path: '/currency',
+                component: () => import('pages/Currency.vue')
+            }
+        ]
     },
 ]
 
 const router = createRouter({
-    history: createWebHistory (),
+    history: createWebHistory(),
     routes
 })
 
