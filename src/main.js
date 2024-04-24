@@ -1,5 +1,31 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+// vue pluggins
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import { createVuetify } from 'vuetify';
 
-createApp(App).mount('#app')
+// vue router
+import router from './router';
+
+// main styles using sass preprocessor
+import './main.sass';
+
+// vue app
+import App from './App.vue';
+
+// vuetify config
+import 'vuetify/styles';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
+import '@mdi/font/css/materialdesignicons.css';
+
+// create vuetify config
+const vuetify = createVuetify({
+  components,
+  directives,
+});
+
+// create pinia state management
+const pinia = createPinia();
+
+// create vue app for currency-calculator
+createApp(App).use(pinia).use(router).use(vuetify).mount('#app');
