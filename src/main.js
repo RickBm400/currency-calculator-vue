@@ -1,35 +1,31 @@
 // vue pluggins
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { createVuetify } from 'vuetify';
 
-// vue router 
+// vue router
 import router from './router';
 
-// main styles using sass preprocessor 
-import './main.sass'
+// main styles using sass preprocessor
+import './main.sass';
 
 // vue app
-import App from './App.vue'
+import App from './App.vue';
 
 // vuetify config
 import 'vuetify/styles';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
-import '@mdi/font/css/materialdesignicons.css'; 
+import '@mdi/font/css/materialdesignicons.css';
 
 // create vuetify config
 const vuetify = createVuetify({
-    components,
-    directives,
-  });
+  components,
+  directives,
+});
 
 // create pinia state management
-const pinia = createPinia()
-  
+const pinia = createPinia();
+
 // create vue app for currency-calculator
-createApp(App)
-.use(pinia)
-.use(router)
-.use(vuetify)
-.mount('#app')
+createApp(App).use(pinia).use(router).use(vuetify).mount('#app');

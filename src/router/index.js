@@ -9,10 +9,6 @@ const routes = [
                 path: '',
                 component: () => import('pages/Landing.vue')
             },
-            {
-                path: '/currency',
-                component: () => import('pages/Currency.vue')
-            }
         ]
     },
 ]
