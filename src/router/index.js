@@ -9,8 +9,17 @@ const routes = [
                 path: '',
                 component: () => import('pages/Landing.vue')
             },
-        ]
+        ],
     },
+    {
+        path: '/trading',
+        children: [
+            {
+                path: '',
+                component: () => import('pages/DataCenter/index.vue')
+            }
+        ]
+    }
 ]
 
 const router = createRouter({
