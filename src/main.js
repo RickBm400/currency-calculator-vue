@@ -6,9 +6,6 @@ import { createVuetify } from 'vuetify';
 // vue router
 import router from './router';
 
-// main styles using sass preprocessor
-import './main.sass';
-
 // vue app
 import App from './App.vue';
 

@@ -16,5 +16,12 @@ export default defineConfig({
       pages: path.resolve(__dirname, 'src', 'pages'),
       components: path.resolve(__dirname, 'src', 'components')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      sass: {
+        additionalData: `@import "./src/main.sass"\n`
+      }
+    }
   }
 })
