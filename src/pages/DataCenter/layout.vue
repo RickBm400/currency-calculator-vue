@@ -1,5 +1,6 @@
 <script setup>
 import UserCard from './components/UserCard.vue';
+import { sidebarMenu } from './constants/labels';
 
 let userInfo = {
   name: 'Darius',
@@ -16,7 +17,18 @@ let userInfo = {
         :status="userInfo.status"
       />
 
-      <hr class="mt-6" style="border: 1px solid #888888" />
+      <hr class="mt-6" style="border: 1px solid #888888; margin-inline: 1rem" />
+      <ul class="items">
+        <v-hover
+          v-for="(item, i) in sidebarMenu"
+          :key="i"
+          v-slot="{ isHovering, props }"
+        >
+          <li :class="`${isHovering ? 'items-active' : ''}`" v-bind="props">
+            {{ item.title }}
+          </li>
+        </v-hover>
+      </ul>
     </nav>
     <router-view style="width: 100vw; height: 100vh" />
   </div>
@@ -30,4 +42,14 @@ $vertical-padding: 1rem
     color: white
     width: calc( 300px - $vertical-padding )
     padding: $vertical-padding
+    .items
+      list-style: none
+      margin-top: 3rem
+      font-size: 1.25rem
+      color: #888888
+      padding-inline: $vertical-padding
+      &-active
+        cursor: pointer
+        color: white
+        transform:translateX(3rem)
 </style>
