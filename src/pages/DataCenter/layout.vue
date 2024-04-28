@@ -2,8 +2,8 @@
 import UserCard from './components/UserCard.vue';
 
 let userInfo = {
-  name: 'Darius Loca',
-  status: 'Active',
+  name: 'Darius',
+  status: 'Inactive',
   location: 'Camboya',
 };
 </script>
@@ -15,6 +15,8 @@ let userInfo = {
         :location="userInfo.location"
         :status="userInfo.status"
       />
+
+      <hr class="mt-6" style="border: 1px solid #888888" />
     </nav>
     <router-view style="width: 100vw; height: 100vh" />
   </div>
