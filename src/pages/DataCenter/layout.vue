@@ -9,7 +9,7 @@ let userInfo = {
 };
 </script>
 <template>
-  <div class="d-flex">
+  <div class="d-flex" id="global_container">
     <nav id="navigation_container" class="d-flex flex-column">
       <section>
         <UserCard
@@ -38,11 +38,10 @@ let userInfo = {
         fugiat voluptate animi.
       </section>
     </nav>
-    <router-view style="width: 100vw; height: 100vh" />
+    <router-view />
   </div>
 </template>
 <style lang="sass" scoped>
-$vertical-padding: 2rem
 
 #navigation_container
     @include big-shoulders
@@ -58,7 +57,7 @@ $vertical-padding: 2rem
       &-active
         cursor: pointer
         color: white
-        transform:translateX(3rem)
+        transform: translateX(3rem)
     .description
       font-size: .8rem
       color: white
