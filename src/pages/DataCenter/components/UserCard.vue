@@ -3,14 +3,14 @@
     id="card_container"
     elevation="0"
     height="80"
-    class="py-0 d-flex justify-space-around align-center"
+    class="pa-0 d-flex justify-space-around align-center"
   >
     <v-avatar size="80" rounded="lg">
       <v-img src="img/nft_logo.png" alt="kayframe"></v-img>
     </v-avatar>
     <v-card-text class="info">
       <h1 class="name">{{ name }}</h1>
-      <h3 :class="`status-${togleStatusColor}`">{{ status }}</h3>
+      <h3 :class="`status status-${togleStatusColor}`">{{ status }}</h3>
       <h3 class="location">{{ location }}</h3>
     </v-card-text>
   </v-card>
@@ -49,11 +49,14 @@ let togleStatusColor = computed({
   line-height: normal
   .name
     font-weight: 900
+    font-size: 1.4rem
   .status
+    font-size: .9rem
     &-active
       color: #8BE79A
     &-inactive
       color: #F47B7B
   .location
+    font-size: .9rem
     color: #888888
 </style>

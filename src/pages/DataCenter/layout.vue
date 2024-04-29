@@ -10,46 +10,56 @@ let userInfo = {
 </script>
 <template>
   <div class="d-flex">
-    <nav id="navigation_container">
-      <UserCard
-        :name="userInfo.name"
-        :location="userInfo.location"
-        :status="userInfo.status"
-      />
+    <nav id="navigation_container" class="d-flex flex-column">
+      <section>
+        <UserCard
+          :name="userInfo.name"
+          :location="userInfo.location"
+          :status="userInfo.status"
+        />
 
-      <hr class="mt-6" style="border: 1px solid #888888; margin-inline: 1rem" />
-      <ul class="items">
-        <v-hover
-          v-for="(item, i) in sidebarMenu"
-          :key="i"
-          v-slot="{ isHovering, props }"
-        >
-          <li :class="`${isHovering ? 'items-active' : ''}`" v-bind="props">
-            {{ item.title }}
-          </li>
-        </v-hover>
-      </ul>
+        <hr class="mt-6" style="border: 1px solid #888888" />
+        <ul class="items">
+          <v-hover
+            v-for="(item, i) in sidebarMenu"
+            :key="i"
+            v-slot="{ isHovering, props }"
+            open-delay="100"
+          >
+            <li :class="`${isHovering ? 'items-active' : ''}`" v-bind="props">
+              {{ item.title }}
+            </li>
+          </v-hover>
+        </ul>
+      </section>
+      <section class="mt-auto description">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate,
+        fugiat perspiciatis? Explicabo autem ex dolor natus doloribus illum
+        fugiat voluptate animi.
+      </section>
     </nav>
     <router-view style="width: 100vw; height: 100vh" />
   </div>
 </template>
 <style lang="sass" scoped>
-$vertical-padding: 1rem
+$vertical-padding: 2rem
 
 #navigation_container
     @include big-shoulders
     background-color: #333334
     color: white
-    width: calc( 300px - $vertical-padding )
+    width: calc( 300px  )
     padding: $vertical-padding
     .items
       list-style: none
       margin-top: 3rem
       font-size: 1.25rem
       color: #888888
-      padding-inline: $vertical-padding
       &-active
         cursor: pointer
         color: white
         transform:translateX(3rem)
+    .description
+      font-size: .8rem
+      color: white
 </style>

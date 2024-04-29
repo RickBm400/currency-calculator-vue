@@ -1,12 +1,12 @@
 <template>
   <div id="dashboard_container">
     <v-row no-gutters>
-      <v-col>
-      coles
-      </v-col>
+      <v-col> ola </v-col>
     </v-row>
   </div>
 </template>
-<script setup>
-import './styles.sass';
-</script>
+<style lang="sass" scoped>
+#dashboard_container
+    background-color: #202124
+    color: white
+</style>
